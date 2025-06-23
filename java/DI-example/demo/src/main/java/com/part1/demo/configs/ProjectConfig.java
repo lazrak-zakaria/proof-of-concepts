@@ -2,6 +2,7 @@ package com.part1.demo.configs;
 
 
 import com.part1.demo.classes.Parrot;
+import com.part1.demo.classes.Person;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,4 +17,12 @@ public class ProjectConfig {
         return p;
     }
 
+
+    @Bean
+    Person person(Parrot p){
+        var person = new Person();
+        person.name = "Lalo";
+        person.parrot = p;
+        return person;
+    }
 }
